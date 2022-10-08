@@ -46,11 +46,68 @@
     \label{eqa:卷积和公式}
 \end{equation}
 
-如式\ref{eqa:卷积和公式}称为\textbf{卷积和}，并且我们定义一个新符号表示\textbf{卷积和}：
+如式\ref{eqa:卷积和公式}称为\textbf{卷积和}，并且我们定义一个新符号表示\textbf{卷积和}
 \begin{equation}
     \begin{aligned}
         y[n] = x[n]*h[n]
     \end{aligned}
     \label{eqa:卷积和符号}
+\end{equation}
+
+\subsection{卷积积分}
+
+与离散信号相似，我们可以认为对于任意连续信号$x(t)$都可以使用一串延时脉冲的线性组合来表示，
+我们可以定义
+\begin{equation}
+    \delta_{\Delta}(t) = 
+    \left\{
+    \begin{aligned}
+        &\frac{1}{\Delta},&0 \leqslant  t < \Delta\\
+        &0,&Other
+    \end{aligned}
+    \right.
+    \label{eqa:卷积积分脉冲}
+\end{equation}
+则信号$x(t)$可表示为
+\begin{equation}
+    \begin{aligned}
+        x(t) = \sum_{k=-\infty}^{\infty}x(k\Delta)\delta_{\Delta}(t-k\Delta)\Delta
+    \end{aligned}
+    \label{eqa:卷积积分1}
+\end{equation}
+当$\Delta $趋于$0$，有
+\begin{equation}
+    \begin{aligned}
+        x(t) = \lim_{\Delta\to0}\sum_{k=-\infty}^{\infty}x(k\Delta)\delta_{\Delta}(t-k\Delta)\Delta
+    \end{aligned}
+    \label{eqa:卷积积分2}
+\end{equation}
+可转化为
+\begin{equation}
+    \begin{aligned}
+        x(t) = \int_{-\infty}^{+\infty}x(\tau)\delta(t-\tau)d\tau
+    \end{aligned}
+    \label{eqa:卷积积分筛选性质}
+\end{equation}
+对于具有单位脉冲响应$h(t)$的系统，有
+\begin{equation}
+    \begin{aligned}
+        x(t) = \lim_{\Delta\to0}\sum_{k=-\infty}^{\infty}x(k\Delta)h_{\Delta}(t-k\Delta)\Delta
+    \end{aligned}
+    \label{eqa:卷积积分3}
+\end{equation}
+即转化成\textbf{卷积积分}
+\begin{equation}
+    \begin{aligned}
+        y(t) = \int_{-\infty}^{+\infty}x(\tau)h(t-\tau)d\tau
+    \end{aligned}
+    \label{eqa:卷积积分公式}
+\end{equation}
+并且两个信号的卷积可表示成
+\begin{equation}
+    \begin{aligned}
+        y(t) = x(t)*h(t)
+    \end{aligned}
+    \label{eqa:卷积积分符号}
 \end{equation}
 
