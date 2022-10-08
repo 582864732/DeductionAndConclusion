@@ -1,0 +1,20 @@
+\chapter{信号与系统}
+
+\section{离散信号的周期性质}
+
+设有离散序列$x[n] = e^{j\omega n}$,其周期为$N$，则有
+\[
+    \begin{aligned}
+        x[n] &= x[n+N] \\
+        e^{j\omega n} &= e^{j\omega (n+N)}
+    \end{aligned}
+    % \label{eqa:1}
+\]
+要满足序列的周期性，则要满足$\omega N = 2k\pi$，
+其中$k$为任意整数，即
+\begin{equation}
+    \frac{N}{k} = \frac{2\pi}{\omega}
+    \label{eqa:离散信号的周期性质结论}
+\end{equation}
+其中$\frac{2\pi}{\omega}$为有理数，才能使该离散序列存在周期性。
+
