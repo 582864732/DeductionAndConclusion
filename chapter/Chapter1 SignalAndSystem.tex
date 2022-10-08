@@ -18,3 +18,39 @@
 \end{equation}
 其中$\frac{2\pi}{\omega}$为有理数，才能使该离散序列存在周期性。
 
+\section{卷积}
+
+\subsection{卷积和}
+
+对于任意的离散序列$x[n]$，我们都可以把它分解为不同时间的加权单位脉冲的叠加，即
+\begin{equation}
+    \begin{aligned}
+        x[n] = \cdots +x[-2]\delta[n+2]+x[-1]\delta[n+1]+x[0]\delta[n]
+            +x[1]\delta[n-1]+x[2]\delta[n-2]+\cdots
+    \end{aligned}
+    \label{eqa:卷积和1}
+\end{equation}
+即
+\begin{equation}
+    \begin{aligned}
+        x[n] = \sum_{k=-\infty}^{\infty}x[k]\delta[n-k]
+    \end{aligned}
+    \label{eqa:卷积和2}
+\end{equation}
+
+我们可以设系统的单位脉冲响应为$h[n]$，根据线性时不变系统的叠加性质，有
+\begin{equation}
+    \begin{aligned}
+        y[n] = \sum_{k=-\infty}^{\infty}x[k]h[n-k]
+    \end{aligned}
+    \label{eqa:卷积和公式}
+\end{equation}
+
+如式\ref{eqa:卷积和公式}称为\textbf{卷积和}，并且我们定义一个新符号表示\textbf{卷积和}：
+\begin{equation}
+    \begin{aligned}
+        y[n] = x[n]*h[n]
+    \end{aligned}
+    \label{eqa:卷积和符号}
+\end{equation}
+
