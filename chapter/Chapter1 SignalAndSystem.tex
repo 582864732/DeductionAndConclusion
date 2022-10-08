@@ -166,3 +166,71 @@
     \label{eqa:傅里叶特征函数6}
 \end{equation}
 
+\subsection{连续傅里叶级数}
+
+连续周期信号$x(t)$具有基波周期$T$,其基波频率为$\omega_{0}$，
+则可将该信号用不同谐波的复指数叠加而成，表示为
+\begin{equation}
+    \begin{aligned}
+        x(t) = \sum_{k=-\infty}^{+\infty}a_{k}e^{jk\omega_{0}t}
+    \end{aligned}
+    \label{eqa:傅里叶级数1}
+\end{equation}
+下面来求解$a_{k}$。
+将式\ref{eqa:傅里叶级数1}两边同时乘$e^{-jn\omega_{0}t}$,得
+\begin{equation}
+    \begin{aligned}
+        x(t)e^{-jn\omega_{0}t} = \sum_{k=-\infty}^{+\infty}a_{k}e^{j(k-n)\omega_{0}t}
+    \end{aligned}
+    \label{eqa:傅里叶级数2}
+\end{equation}
+两边从$0$到$T$积分得
+\begin{equation}
+    \begin{aligned}
+        \int_{0}^{T}x(t)e^{-jn\omega_{0}t} = 
+        \int_{0}^{T}\sum_{k=-\infty}^{+\infty}a_{k}e^{j(k-n)\omega_{0}t}
+    \end{aligned}
+    \label{eqa:傅里叶级数3}
+\end{equation}
+对右边交换积分次序得
+\begin{equation}
+    \begin{aligned}
+        \int_{0}^{T}x(t)e^{-jn\omega_{0}t} = 
+        \sum_{k=-\infty}^{+\infty}a_{k}[\int_{0}^{T}e^{j(k-n)\omega_{0}t}]
+    \end{aligned}
+    \label{eqa:傅里叶级数4}
+\end{equation}
+对右边积分进行分解得
+\begin{equation}
+    \begin{aligned}
+        \int_{0}^{T}e^{j(k-n)\omega_{0}t} = 
+        \int_{0}^{T}\cos[(k-n)\omega_{0}t]dt + j\int_{0}^{T}\sin[(k-n)\omega_{0}t]dt
+    \end{aligned}
+    \label{eqa:傅里叶级数5}
+\end{equation}
+我们知道$T = \frac{2\pi}{\omega_{0}}$,因此上式中三角函数得基波周期为$\frac{T}{|k-n|}$，
+而$T$必定为$\frac{T}{|k-n|}$的整数倍，因此有
+\begin{equation}
+    \int_{0}^{T}e^{j(k-n)\omega_{0}t} = 
+    \left\{
+    \begin{aligned}
+        T,&k=n\\
+        0,&k\neq n
+    \end{aligned}
+    \right.
+    \label{eqa:傅里叶级数6}
+\end{equation}
+因此式\ref{eqa:傅里叶级数4}化简为
+\begin{equation}
+    \begin{aligned}
+        \int_{0}^{T}x(t)e^{-jn\omega_{0}t} = Ta_{n}
+    \end{aligned}
+    \label{eqa:傅里叶级数7}
+\end{equation}
+因此有
+\begin{equation}
+    \begin{aligned}
+        a_{n} = \frac{1}{T}\int_{0}^{T}x(t)e^{-jn\omega_{0}t} 
+    \end{aligned}
+    \label{eqa:傅里叶级数8}
+\end{equation}
