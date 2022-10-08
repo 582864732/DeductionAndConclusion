@@ -111,3 +111,58 @@
     \label{eqa:卷积积分符号}
 \end{equation}
 
+\section{傅里叶级数和傅里叶变换}
+
+\subsection{特征函数}
+
+一个信号，若系统对该信号的输出响应仅仅为一个常数乘以该信号，则称该信号为系统的\textbf{特征函数}，
+该常数称为系统的\textbf{特征值}。
+
+\textbf{证明：复指数信号为线性时不变系统的特征值。}
+
+对于输入$x(t) = e^{st}$,系统的单位脉冲响应为$h(t)$，有卷积积分
+\begin{equation}
+    \begin{aligned}
+        y(t) &= \int_{-\infty}^{+\infty}h(\tau)x(t-\tau)d\tau\\
+             &= \int_{-\infty}^{+\infty}h(\tau)e^{s(t-\tau)}d\tau\\
+             &= e^{s}\int_{-\infty}^{+\infty}h(\tau)e^{-s\tau}d\tau
+    \end{aligned}
+    \label{eqa:傅里叶特征函数1}
+\end{equation}
+令
+\begin{equation}
+    \begin{aligned}
+        H(s) = \int_{-\infty}^{+\infty}h(\tau)e^{-s\tau}d\tau
+    \end{aligned}
+    \label{eqa:傅里叶特征函数2}
+\end{equation}
+则有
+\begin{equation}
+    \begin{aligned}
+        y(t) = H(s)x(t)
+    \end{aligned}
+    \label{eqa:傅里叶特征函数3}
+\end{equation}
+
+对于离散系统，同样可以证明其具有特征函数
+\begin{equation}
+    \begin{aligned}
+        x[n] = z^{n}
+    \end{aligned}
+    \label{eqa:傅里叶特征函数4}
+\end{equation}
+与特征值
+\begin{equation}
+    \begin{aligned}
+        H(z) = \sum_{k=-\infty}^{+\infty}h[k]z^{-k}
+    \end{aligned}
+    \label{eqa:傅里叶特征函数5}
+\end{equation}
+使得
+\begin{equation}
+    \begin{aligned}
+        y[n] = H(z)x[n]
+    \end{aligned}
+    \label{eqa:傅里叶特征函数6}
+\end{equation}
+
